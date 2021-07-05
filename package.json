@@ -1,13 +1,13 @@
 {
-  "name": "flutter-touchbar-helper",
-  "displayName": "Flutter Touchbar Helper",
-  "description": "It's a touchbar helper to save time on cleaning and building flutter projects",
-  "version": "1.0.3",
-  "publisher": "leeyurani",
+  "name": "choc-touchbar",
+  "displayName": "Choc Touchbar",
+  "description": "My preferred vscode content for MacBook Touchbar",
+  "version": "0.0.1",
+  "publisher": "anubra266",
   "engines": {
     "vscode": "^1.52.0"
   },
-  "repository": "https://github.com/yusriltakeuchi/flutter-touchbar-helper",
+  "repository": "https://github.com/anubra266/choc-touchbar",
   "categories": [
     "Other"
   ],
@@ -24,164 +24,83 @@
     "touch bar"
   ],
   "activationEvents": [
-    "onLanguage:dart",
-    "workspaceContains:**/pubspec.yaml",
-    "workspaceContains:**/*.dart",
-    "onCommand:flutter-touchbar-helper.flutterclean",
-    "onCommand:flutter-touchbar-helper.flutterbuild",
-    "onCommand:flutter-touchbar-helper.git",
-    "onCommand:flutter-touchbar-helper.closegit",
-    "onCommand:flutter-touchbar-helper.closebuild",
-    "onCommand:flutter-touchbar-helper.gitcommit",
-    "onCommand:flutter-touchbar-helper.gitpush",
-    "onCommand:flutter-touchbar-helper.build.singleapk",
-    "onCommand:flutter-touchbar-helper.build.singleappbundle",
-    "onCommand:flutter-touchbar-helper.build.splitabi",
-    "onCommand:flutter-touchbar-helper.build.fluttertools",
-    "onCommand:flutter-touchbar-helper.build.closetools",
-    "onCommand:flutter-touchbar-helper.build.devtools"
+    "onCommand:choc-touchbar.git",
+    "onCommand:choc-touchbar.gitcommit",
+    "onCommand:choc-touchbar.gitpush",
+    "onCommand:choc-touchbar.chakra",
+    "onCommand:choc-touchbar.chakradocs",
+    "onCommand:choc-touchbar.closegit"
   ],
   "main": "./out/extension.js",
   "contributes": {
-    "languages": [
-      {
-        "id": "dart",
-        "extensions": [
-          ".dart"
-        ],
-        "aliases": [
-          "Dart"
-        ],
-        "configuration": "./syntaxes/dart-language-configuration.json"
-      }
-    ],
-    "grammars": [
-      {
-        "language": "dart",
-        "scopeName": "source.dart",
-        "path": "./syntaxes/dart.json"
-      }
-    ],
     "commands": [
       {
-        "command": "flutter-touchbar-helper.fluttertools",
-        "title": "🧰 Flutter Tools"
+        "command": "choc-touchbar.git",
+        "title": "Git",
+        "icon": "./assets/git.png"
       },
       {
-        "command": "flutter-touchbar-helper.flutterclean",
-        "title": "🗑️ Clean"
-      },
-      {
-        "command": "flutter-touchbar-helper.devtools",
-        "title": "🔥 DevTools"
-      },
-      {
-        "command": "flutter-touchbar-helper.flutterbuild",
-        "title": "🛠️ Flutter Build"
-      },
-      {
-        "command": "flutter-touchbar-helper.git",
-        "title": "🔗 Git"
-      },
-      {
-        "command": "flutter-touchbar-helper.closetools",
-        "title": " 🅧 "
-      },
-      {
-        "command": "flutter-touchbar-helper.closegit",
-        "title": " 🅧 "
-      },
-      {
-        "command": "flutter-touchbar-helper.closebuild",
-        "title": " 🅧 "
-      },
-      {
-        "command": "flutter-touchbar-helper.gitcommit",
+        "command": "choc-touchbar.gitcommit",
         "title": "📘 Commit"
       },
       {
-        "command": "flutter-touchbar-helper.gitpush",
+        "command": "choc-touchbar.gitpush",
         "title": "🚀 Push"
       },
       {
-        "command": "flutter-touchbar-helper.build.singleapk",
-        "title": "📄 APK"
+        "command": "choc-touchbar.closegit",
+        "title": "← "
       },
       {
-        "command": "flutter-touchbar-helper.build.singleappbundle",
-        "title": "📄 Bundle"
+        "command": "choc-touchbar.chakra",
+        "title": "Chakra UI",
+        "icon": "./assets/chakra.png"
       },
       {
-        "command": "flutter-touchbar-helper.build.splitabi",
-        "title": "📑 Split"
+        "command": "choc-touchbar.chakradocs",
+        "title": "📓 Docs"
+      },
+      {
+        "command": "choc-touchbar.closechakra",
+        "title": "← "
       }
     ],
     "menus": {
       "touchBar": [
         {
-          "command": "flutter-touchbar-helper.closebuild",
-          "group": "tools",
-          "when": "enableBuild"
-        },
-        {
-          "command": "flutter-touchbar-helper.closegit",
-          "group": "git-action",
-          "when": "enableGit"
-        },
-        {
-          "command": "flutter-touchbar-helper.closetools",
-          "group": "tools",
-          "when": "enableTools"
-        },
-        {
-          "command": "flutter-touchbar-helper.git",
+          "command": "choc-touchbar.git",
           "group": "gittools",
-          "when": "!enableGit && !enableBuild && !enableTools"
+          "when": "!enableGit && !enableChakra"
         },
         {
-          "command": "flutter-touchbar-helper.gitcommit",
+          "command": "choc-touchbar.gitcommit",
           "group": "git-action",
           "when": "enableGit"
         },
         {
-          "command": "flutter-touchbar-helper.gitpush",
+          "command": "choc-touchbar.gitpush",
           "group": "git-action",
           "when": "enableGit"
         },
         {
-          "command": "flutter-touchbar-helper.fluttertools",
-          "group": "tools",
-          "when": "!enableBuild && !enableGit && !enableTools"
+          "command": "choc-touchbar.closegit",
+          "group": "git-action",
+          "when": "enableGit"
         },
         {
-          "command": "flutter-touchbar-helper.flutterclean",
+          "command": "choc-touchbar.chakra",
           "group": "tools",
-          "when": "enableTools"
+          "when": "!enableGit && !enableChakra"
         },
         {
-          "command": "flutter-touchbar-helper.devtools",
+          "command": "choc-touchbar.chakradocs",
           "group": "tools",
-          "when": "enableTools"
+          "when": "enableChakra"
         },
         {
-          "command": "flutter-touchbar-helper.flutterbuild",
+          "command": "choc-touchbar.closechakra",
           "group": "tools",
-          "when": "!enableBuild && !enableGit && !enableTools"
-        },
-        {
-          "command": "flutter-touchbar-helper.build.singleapk",
-          "group": "tools",
-          "when": "enableBuild"
-        },
-        {
-          "command": "flutter-touchbar-helper.build.singleappbundle",
-          "group": "tools",
-          "when": "enableBuild"
-        },
-        {
-          "command": "flutter-touchbar-helper.build.splitabi",
-          "group": "tools",
-          "when": "enableBuild"
+          "when": "enableChakra"
         }
       ]
     }
