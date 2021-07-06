@@ -41,7 +41,7 @@ export function activate(context: vscode.ExtensionContext) {
     "choc-touchbar.chakradocs",
     () => {
       vscode.env.openExternal(vscode.Uri.parse("https://chakra-ui.com"));
-      //   vscode.commands.executeCommand("setContext", "enableChakra", false);
+      vscode.commands.executeCommand("setContext", "enableChakra", false);
     }
   );
 
